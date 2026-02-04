@@ -1,0 +1,83 @@
+:root {
+  --navy: #111F35;
+  --white: #FFFFFF;
+  --gray: #E5E7EB;
+  --teal: #2FB9B3;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--white);
+  color: var(--navy);
+  transition: 0.3s ease;
+}
+
+.dark {
+  background: var(--navy);
+  color: var(--white);
+}
+
+header {
+  padding: 30px;
+  text-align: center;
+  background: var(--navy);
+  color: var(--white);
+}
+
+button {
+  padding: 8px 14px;
+  border: none;
+  background: var(--teal);
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+section {
+  padding: 40px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.skills-grid span {
+  background: var(--gray);
+  padding: 10px;
+  text-align: center;
+  border-radius: 6px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.card, .project {
+  background: var(--gray);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.dark .card,
+.dark .project,
+.dark .skills-grid span {
+  background: #1f2f4f;
+}
+
+a {
+  color: var(--teal);
+  text-decoration: none;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: var(--gray);
+}
