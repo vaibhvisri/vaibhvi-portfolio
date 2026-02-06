@@ -1,379 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vaibhvi Srivastav | Data Analyst Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vaibhvi Srivastav | Data Analyst</title>
 
-  <meta name="description" content="Vaibhvi Srivastav – Data Analyst skilled in Power BI, Statistics, Excel, and business insights." />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
-  <style>
-    :root {
-      --bg: #f5f7fa;
-      --text: #1f2937;
-      --card: #ffffff;
-      --primary: #4a5d73;
-      --accent: #c6a34f;
-      --muted: #6b7280;
-      --border: #e5e7eb;
-    }
+<style>
+:root {
+  --bg: #f4f6fb;
+  --card: #ffffff;
+  --text: #1f2937;
+  --accent: #2563eb;
+  --muted: #6b7280;
+}
 
-    body.dark {
-      --bg: #0b1220;
-      --text: #e5e7eb;
-      --card: #121a2b;
-      --primary: #9aa7b8;
-      --accent: #d6c7a1;
-      --muted: #9ca3af;
-      --border: #1f2937;
-    }
+body.dark {
+  --bg: #0f172a;
+  --card: #1e293b;
+  --text: #e5e7eb;
+  --accent: #60a5fa;
+  --muted: #94a3b8;
+}
 
-    * {
-      box-sizing: border-box;
-      font-family: "Poppins", "Segoe UI", sans-serif;
-      scroll-behavior: smooth;
-    }
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
 
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-    }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
 
-    /* NAVBAR */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: var(--card);
-      border-bottom: 1px solid var(--border);
-    }
+header {
+  padding: 4.5rem 1rem;
+  text-align: center;
+  background: linear-gradient(135deg, var(--accent), #22c55e);
+  color: white;
+}
 
-    nav {
-      max-width: 1200px;
-      margin: auto;
-      padding: 16px 22px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    nav h1 {
-      margin: 0;
-      font-size: 1.4rem;
-      color: var(--primary);
-      font-weight: 700;
-    }
-
-    nav a {
-      margin-left: 22px;
-      text-decoration: none;
-      color: var(--text);
-      font-weight: 500;
-    }
-
-    nav a:hover {
-      color: var(--accent);
-    }
-
-    .toggle {
-      margin-left: 20px;
-      padding: 6px 14px;
-      border-radius: 20px;
-      border: none;
-      cursor: pointer;
-      background: var(--primary);
-      color: white;
-    }
-
-    /* HERO */
-    .hero {
-      min-height: 92vh;
-      display: flex;
-      align-items: center;
-      background: linear-gradient(135deg, #4a5d73, #111827);
-      color: white;
-    }
-
-    .hero-content {
-      max-width: 1200px;
-      margin: auto;
-      padding: 70px 22px;
-    }
-
-    .badge {
-      display: inline-block;
-      background: rgba(255,255,255,0.12);
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      margin-bottom: 16px;
-    }
-
-    .hero h2 {
-      font-size: 3.2rem;
-      margin-bottom: 18px;
-      line-height: 1.2;
-    }
-
-    .hero span {
-      color: var(--accent);
-    }
-
-    .hero p {
-      max-width: 640px;
-      font-size: 1.15rem;
-      margin-bottom: 35px;
-      color: #e5e7eb;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 13px 30px;
-      border-radius: 30px;
-      font-weight: 600;
-      text-decoration: none;
-      margin-right: 15px;
-      transition: 0.3s ease;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #111827;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn-secondary {
-      border: 2px solid white;
-      color: white;
-    }
-
-    .btn-secondary:hover {
-      background: white;
-      color: #111827;
-    }
-
-    section {
-      max-width: 1200px;
-      margin: auto;
-      padding: 90px 22px;
-    }
-
-    section h2 {
-      text-align: center;
-      font-size: 2.4rem;
-      margin-bottom: 55px;
-      color: var(--primary);
-    }
-
-    /* ABOUT */
-    .about p {
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
-      font-size: 1.08rem;
-      color: var(--muted);
-    }
-
-    /* SKILLS */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-      gap: 24px;
-    }
-
-    .skill {
-      background: var(--card);
-      padding: 26px;
-      border-radius: 18px;
-      text-align: center;
-      box-shadow: 0 16px 40px rgba(0,0,0,0.08);
-      border: 1px solid var(--border);
-    }
-
-    .skill span {
-      font-size: 1.8rem;
-      display: block;
-      margin-bottom: 10px;
-    }
-
-    /* SERVICES */
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 28px;
-    }
-
-    .card {
-      background: var(--card);
-      padding: 34px;
-      border-radius: 22px;
-      text-align: center;
-      box-shadow: 0 18px 45px rgba(0,0,0,0.09);
-      border: 1px solid var(--border);
-    }
-
-    .card span {
-      font-size: 2rem;
-      display: block;
-      margin-bottom: 14px;
-    }
-
-    /* PROJECTS */
-    .project {
-      background: var(--card);
-      border-radius: 22px;
-      padding: 40px;
-      margin-bottom: 70px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-      border: 1px solid var(--border);
-    }
-
-    iframe {
-      width: 100%;
-      height: 520px;
-      border: none;
-      border-radius: 18px;
-      margin: 22px 0;
-    }
-
-    /* CONTACT */
-    .contact {
-      text-align: center;
-    }
-
-    .contact a {
-      color: var(--primary);
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    footer {
-      background: var(--card);
-      text-align: center;
-      padding: 28px;
-      font-size: 0.9rem;
-      color: var(--muted);
-      border-top: 1px solid var(--border);
-    }
-
-    @media (max-width: 768px) {
-      .hero h2 { font-size: 2.3rem; }
-      iframe { height: 420px; }
-    }
-  </style>
-</head>
-
-<body>
-
-<header>
-  <nav>
-    <h1>Vaibhvi</h1>
-    <div>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-      <button class="toggle" onclick="toggleTheme()">🌙</button>
-    </div>
-  </nav>
-</header>
-
-<section class="hero">
-  <div class="hero-content">
-    <div class="badge">📊 Data Analyst Portfolio</div>
-    <h2>Hi, I'm <span>Vaibhvi</span><br>Data Analyst</h2>
-    <p>
-      MSc Statistics graduate helping businesses make smarter decisions
-      through clean dashboards and data storytelling.
-    </p>
-    <a href="#projects" class="btn btn-primary">📈 View Projects</a>
-    <a href="Resume.pdf" class="btn btn-secondary" download>
-      📄 Download Resume
-    </a>
-  </div>
-</section>
-
-<section id="about" class="about">
-  <h2>About Me</h2>
-  <p>
-    I transform raw data into clear, actionable insights using Power BI,
-    statistics, and analytical thinking. My focus is accuracy, clarity,
-    and business impact.
-  </p>
-</section>
-
-<section id="skills">
-  <h2>Skills</h2>
-  <div class="skills-grid">
-    <div class="skill"><span>📊</span>Power BI</div>
-    <div class="skill"><span>📈</span>Excel</div>
-    <div class="skill"><span>🧩</span>Power Query</div>
-    <div class="skill"><span>🧮</span>DAX</div>
-    <div class="skill"><span>📐</span>Statistics</div>
-    <div class="skill"><span>🗄️</span>SQL (Basic)</div>
-    <div class="skill"><span>📘</span>R Programming</div>
-  </div>
-</section>
-
-<section id="services">
-  <h2>Services</h2>
-  <div class="cards">
-    <div class="card"><span>📊</span>Data Analysis</div>
-    <div class="card"><span>📈</span>Power BI Dashboards</div>
-    <div class="card"><span>📉</span>Data Visualization</div>
-    <div class="card"><span>📑</span>Business Reporting</div>
-  </div>
-</section>
-
-<section id="projects">
-  <h2>Projects</h2>
-
-  <div class="project">
-    <h3>Super Store Sales Dashboard</h3>
-    <p>Sales, profit, and regional performance analysis.</p>
-    <iframe src="https://app.powerbi.com/view?r=eyJrIjoiZjFlMWI4OGMtYmU3MC00NTgwLTk3NTAtMjkxNGRlOGVkMTk1IiwidCI6ImU5YjkyNzZlLTIzNzEtNDcxNS04YTFkLTE2YmNlOGZiYjZmZCJ9"></iframe>
-    <p><strong>Tools:</strong> Excel, Power BI, Power Query, DAX</p>
-  </div>
-
-  <div class="project">
-    <h3>Delivery Analytics Dashboard</h3>
-    <p>Operational efficiency and delivery insights.</p>
-    <iframe src="https://app.powerbi.com/view?r=eyJrIjoiYmQwYjM0MzctOTJlNC00N2IxLTljOTctZTQ0NTAwMDY0MThkIiwidCI6ImU5YjkyNzZlLTIzNzEtNDcxNS04YTFkLTE2YmNlOGZiYjZmZCJ9"></iframe>
-    <p><strong>Tools:</strong> Excel, Power BI, Power Query</p>
-  </div>
-
-  <div class="project">
-    <h3>Pizza Sales Dashboard</h3>
-    <p>Order trends, revenue tracking, and product insights.</p>
-    <iframe src="https://app.powerbi.com/view?r=eyJrIjoiOWE4NDE0NzQtNTkzNi00N2NjLWFkNTktNmQ1N2U1MTcyZGI4IiwidCI6ImU5YjkyNzZlLTIzNzEtNDcxNS04YTFkLTE2YmNlOGZiYjZmZCJ9"></iframe>
-    <p><strong>Tools:</strong> Excel, Power BI, Power Query, DAX</p>
-  </div>
-</section>
-
-<section id="contact" class="contact">
-  <h2>Contact</h2>
-  <p>📧 <a href="mailto:vaibhvisrivastav10@gmail.com">vaibhvisrivastav10@gmail.com</a></p>
-  <p>🔗 <a href="https://www.linkedin.com/in/vaibhvi-srivastav-43416a200" target="_blank">LinkedIn Profile</a></p>
-  <p>📄 <a href="Resume.pdf" download>Download Resume</a></p>
-  <p>📍 Lucknow, India</p>
-</section>
-
-<footer>
-  © 2026 Vaibhvi Srivastav • Data Analyst Portfolio
-</footer>
-
-<script>
-  function toggleTheme() {
-    document.body.classList.toggle("dark");
-  }
-</script>
-
-</body>
-</html>
+header h1 {
+  font-si
