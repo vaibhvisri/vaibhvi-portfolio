@@ -2,105 +2,217 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vaibhvi Srivastav | Data Analyst</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vaibhvi Srivastav | Data Analyst Portfolio</title>
+  <meta name="description" content="Vaibhvi Srivastav – Data Analyst skilled in Power BI, SQL, Excel, and Data Visualization. View interactive dashboards and analytics projects." />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #f5f7fa;
-      --text: #222;
-      --card: #ffffff;
-      --accent: #4f46e5;
-    }
-
-    body.dark {
-      --bg: #0f172a;
-      --text: #e5e7eb;
-      --card: #1e293b;
-      --accent: #818cf8;
+      --primary: #6B7C93;
+      --accent: #D6C7A1;
+      --highlight: #C9A24D;
+      --dark: #111F35;
+      --light: #f8f9fb;
     }
 
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
-      font-family: "Segoe UI", sans-serif;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
     }
 
     body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
+      background: var(--light);
+      color: var(--dark);
       line-height: 1.6;
     }
 
+    /* Navbar */
     header {
-      padding: 2.5rem 1rem;
-      text-align: center;
-      background: linear-gradient(135deg, var(--accent), #22c55e);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: white;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+    }
+
+    nav h2 {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--highlight);
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, var(--primary), var(--dark));
       color: white;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
+    .hero-content {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px;
     }
 
-    header button {
-      margin-top: 1rem;
-      padding: 8px 14px;
-      border: none;
-      border-radius: 20px;
-      cursor: pointer;
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 26px;
+      border-radius: 30px;
+      text-decoration: none;
+      margin-right: 15px;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
+
+    .btn-primary {
+      background: var(--highlight);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #b18c3a;
+    }
+
+    .btn-secondary {
+      border: 2px solid white;
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background: white;
+      color: var(--dark);
     }
 
     section {
       max-width: 1100px;
       margin: auto;
-      padding: 3rem 1.2rem;
+      padding: 80px 20px;
     }
 
-    h2 {
+    section h2 {
+      font-size: 2.2rem;
       text-align: center;
-      margin-bottom: 2rem;
-      color: var(--accent);
+      margin-bottom: 50px;
+      color: var(--primary);
     }
 
-    .skills-grid, .cards {
+    /* About */
+    .about p {
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+      font-size: 1.05rem;
+    }
+
+    /* Skills */
+    .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
     }
 
-    .skills-grid span, .card, .project {
-      background: var(--card);
-      padding: 1rem;
-      border-radius: 12px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    .skill {
+      background: white;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
       text-align: center;
+      font-weight: 600;
+    }
+
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
     }
 
     .project {
-      margin-bottom: 3rem;
-      padding: 1.5rem;
+      background: white;
+      border-radius: 18px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: transform 0.3s ease;
     }
 
-    iframe {
+    .project:hover {
+      transform: translateY(-8px);
+    }
+
+    .project img {
       width: 100%;
-      height: 500px;
-      border: none;
-      border-radius: 12px;
-      margin-top: 1rem;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .project-content {
+      padding: 20px;
+    }
+
+    .project-content h3 {
+      margin-bottom: 10px;
+      color: var(--dark);
+    }
+
+    .tags {
+      font-size: 0.85rem;
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+
+    /* Contact */
+    .contact {
+      text-align: center;
     }
 
     footer {
+      background: var(--dark);
+      color: white;
       text-align: center;
-      padding: 1.5rem;
-      background: var(--card);
-      font-size: 0.9rem;
+      padding: 20px;
+      margin-top: 40px;
     }
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.2rem; }
     }
   </style>
 </head>
@@ -108,113 +220,79 @@
 <body>
 
 <header>
-  <h1>Vaibhvi Srivastav</h1>
-  <p>Aspiring Data Analyst</p>
-  <button onclick="toggleTheme()">🌙 Toggle Dark Mode</button>
+  <nav>
+    <h2>Vaibhvi</h2>
+    <div>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
 </header>
 
-<section id="home">
-  <h2>Transforming Data into Insights</h2>
-  <p style="text-align:center">
-    MSc Statistics graduate with hands-on experience in Power BI dashboards,
-    data visualization, and analytics.
-  </p>
+<section class="hero">
+  <div class="hero-content">
+    <h1>Hi, I'm Vaibhvi 👋<br>Data Analyst</h1>
+    <p>I transform raw data into meaningful insights using Power BI, SQL, Excel, and clean data storytelling.</p>
+    <a href="#projects" class="btn btn-primary">View Projects</a>
+    <a href="resume.pdf" class="btn btn-secondary">Download Resume</a>
+  </div>
 </section>
 
-<section id="about">
+<section id="about" class="about">
   <h2>About Me</h2>
   <p>
-    I’m a data analyst enthusiast and MSc Statistics student with a strong interest in transforming raw data into meaningful insights. I enjoy working with data analysis, visualization, and dashboard creation using tools like Power BI. I’ve built interactive dashboards such as Super Store Sales and Delivery Analytics, focusing on clarity, business understanding, and data-driven decision making.
+    I am an aspiring Data Analyst with a strong interest in data visualization, dashboard design, and business insights. I enjoy working with data to uncover patterns and tell stories that help decision‑making.
   </p>
-
-  <h3>Education</h3>
-  <p>🎓 Master’s in Statistics (2025)</p>
-
-  <h3>Experience</h3>
-  <ul>
-    <li><strong>Data Analyst Intern</strong> — UPICON, Lucknow(3 months)</li>
-    <li><strong>Data Analyst Intern</strong> — NSSO FOD, Bareilly(2 months)</li>
-  </ul>
 </section>
 
 <section id="skills">
   <h2>Skills</h2>
   <div class="skills-grid">
-    <span>Power BI</span>
-    <span>Excel</span>
-    <span>Power Query</span>
-    <span>DAX(Basic)</span>
-    <span>Statistics</span>
-    <span>SQL (Basic)</span>
-    <span>R Programming</span>
-  </div>
-</section>
-
-<section id="services">
-  <h2>Services</h2>
-  <div class="cards">
-    <div class="card">📊 Data Analysis</div>
-    <div class="card">📈 Power BI Dashboards</div>
-    <div class="card">📑 Data Cleaning</div>
-    <div class="card">📉 Data Visualization</div>
+    <div class="skill">Power BI</div>
+    <div class="skill">SQL</div>
+    <div class="skill">Excel</div>
+    <div class="skill">Python</div>
+    <div class="skill">Data Visualization</div>
+    <div class="skill">Data Analysis</div>
   </div>
 </section>
 
 <section id="projects">
   <h2>Projects</h2>
+  <div class="projects-grid">
 
-  <div class="project">
-    <h3>Super Store Sales Dashboard</h3>
-    <p>Sales, profit, regional & product analysis using Power BI.</p>
+    <div class="project">
+      <img src="pizza-dashboard.png" alt="Pizza Sales Dashboard">
+      <div class="project-content">
+        <h3>Pizza Sales Dashboard</h3>
+        <p class="tags">Power BI • DAX • Data Modeling</p>
+        <p>Interactive dashboard analyzing revenue, orders, trends, and category performance.</p>
+      </div>
+    </div>
 
-    <iframe 
-      src="https://app.powerbi.com/view?r=eyJrIjoiZjFlMWI4OGMtYmU3MC00NTgwLTk3NTAtMjkxNGRlOGVkMTk1IiwidCI6ImU5YjkyNzZlLTIzNzEtNDcxNS04YTFkLTE2YmNlOGZiYjZmZCJ9">
-    </iframe>
+    <div class="project">
+      <img src="delivery-dashboard.png" alt="Delivery Analytics Dashboard">
+      <div class="project-content">
+        <h3>Delivery Analytics Dashboard</h3>
+        <p class="tags">Power BI • KPI Analysis</p>
+        <p>Dashboard focused on delivery performance, efficiency metrics, and insights.</p>
+      </div>
+    </div>
 
-    <p><strong>Tools:</strong> Excel, Power BI, Power Query, DAX</p>
-  </div>
-
-  <div class="project">
-    <h3>Delivery Analytics Dashboard</h3>
-    <p>Operational efficiency & delivery performance analysis.</p>
-
-    <iframe 
-      src="https://app.powerbi.com/view?r=eyJrIjoiYmQwYjM0MzctOTJlNC00N2IxLTljOTctZTQ0NTAwMDY0MThkIiwidCI6ImU5YjkyNzZlLTIzNzEtNDcxNS04YTFkLTE2YmNlOGZiYjZmZCJ9">
-    </iframe>
-
-    <p><strong>Tools:</strong> Excel, Power BI, Power Query</p>
-  </div>
-</section>
-   <div class="project">
-    <h3>Pizza Sales Dashboard</h3>
-    <p>Tracking revenue, orders, and top-selling pizzas at a glance</p>
-
-    <iframe 
-      src="https://app.powerbi.com/view?r=eyJrIjoiOWE4NDE0NzQtNTkzNi00N2NjLWFkNTktNmQ1N2U1MTcyZGI4IiwidCI6ImU5YjkyNzZlLTIzNzEtNDcxNS04YTFkLTE2YmNlOGZiYjZmZCJ9">
-    </iframe>
-
-    <p><strong>Tools:</strong> Power BI, Power Query, DAX</p>
   </div>
 </section>
 
-<section id="contact">
+<section id="contact" class="contact">
   <h2>Contact</h2>
-  <p>Email: <a href="mailto:vaibhvisrivastav10@gmail.com">vaibhvisrivastav10@gmail.com</a></p>
-  <p>LinkedIn: <a href="https://www.linkedin.com/in/vaibhvi-srivastav-43416a200" target="_blank">View Profile</a></p>
-  <p>📍 Lucknow, Uttar Pradesh, India</p>
+  <p>📧 vaibhvi.collegedunia@gmail.com</p>
+  <p>🔗 LinkedIn | GitHub</p>
 </section>
 
 <footer>
-  © 2026 Vaibhvi Srivastav | Data Analyst
+  © 2026 Vaibhvi Srivastav • Data Analyst Portfolio
 </footer>
-
-<script>
-  function toggleTheme() {
-    document.body.classList.toggle("dark");
-  }
-</script>
 
 </body>
 </html>
-
-
