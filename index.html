@@ -8,345 +8,242 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-/* ===== THEME VARIABLES ===== */
 :root{
-  --bg:#0f172a;
-  --surface:#111827;
-  --card:#1f2937;
-  --border:#2d3748;
-  --text:#e5e7eb;
-  --muted:#9ca3af;
-  --accent:#c9a24d;
-  --accent-soft:rgba(201,162,77,.15);
-}
-
-.light{
-  --bg:#f8fafc;
-  --surface:#ffffff;
-  --card:#f1f5f9;
-  --border:#e5e7eb;
+  --bg:#ffffff;
   --text:#0f172a;
-  --muted:#475569;
-  --accent:#9a7b2f;
-  --accent-soft:rgba(154,123,47,.15);
+  --muted:#64748b;
+  --line:#e5e7eb;
+  --accent:#2563eb;
 }
 
-/* ===== BASE ===== */
-*{box-sizing:border-box;font-family:Inter,Segoe UI,sans-serif}
+*{
+  box-sizing:border-box;
+  font-family:Inter, system-ui, -apple-system, Segoe UI, sans-serif;
+}
 
 body{
   margin:0;
   background:var(--bg);
   color:var(--text);
-  line-height:1.7;
-  transition:.3s;
+  line-height:1.75;
 }
 
-.container{
-  max-width:1200px;
+.wrapper{
+  max-width:900px;
   margin:auto;
-  padding:0 24px;
+  padding:80px 24px;
 }
 
-/* ===== TOGGLE ===== */
-.toggle{
-  position:fixed;
-  top:20px;
-  right:20px;
-  background:var(--card);
-  border:1px solid var(--border);
-  padding:10px 14px;
-  border-radius:30px;
-  cursor:pointer;
-  z-index:100;
+/* ===== HEADER ===== */
+header{
+  margin-bottom:80px;
 }
 
-/* ===== HERO ===== */
-.hero{
-  display:grid;
-  grid-template-columns:1.3fr 1fr;
-  gap:60px;
-  padding:100px 0 80px;
+header h1{
+  font-size:3rem;
+  margin:0;
+  letter-spacing:-1px;
 }
 
-.badge{
-  display:inline-block;
-  padding:6px 14px;
-  border-radius:20px;
-  background:var(--accent-soft);
-  color:var(--accent);
-  font-size:.85rem;
-  margin-bottom:20px;
-}
-
-.hero h1{
-  font-size:3.4rem;
-  margin:0 0 16px;
-}
-
-.hero p{
-  max-width:540px;
+header p{
+  margin-top:12px;
   color:var(--muted);
+  max-width:520px;
 }
 
-.actions{
-  margin-top:32px;
+.meta{
+  margin-top:24px;
   display:flex;
-  gap:16px;
+  gap:18px;
+  flex-wrap:wrap;
+  font-size:.95rem;
+}
+
+.meta a{
+  color:var(--accent);
+  text-decoration:none;
+}
+
+/* ===== SECTIONS ===== */
+section{
+  margin-bottom:90px;
+}
+
+h2{
+  font-size:1.4rem;
+  margin-bottom:28px;
+  letter-spacing:.3px;
+}
+
+/* ===== EXPERIENCE ===== */
+.exp{
+  margin-bottom:40px;
+}
+
+.exp-header{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
   flex-wrap:wrap;
 }
 
-.btn{
-  padding:12px 24px;
-  border-radius:14px;
-  border:1px solid var(--border);
-  background:var(--card);
-  color:var(--text);
-  text-decoration:none;
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  transition:.3s;
+.exp h3{
+  margin:0;
+  font-size:1.05rem;
 }
 
-.btn.primary{
-  background:linear-gradient(135deg,var(--accent),#e6cd8a);
-  color:#111827;
-  font-weight:600;
-  border:none;
+.exp span{
+  color:var(--muted);
+  font-size:.9rem;
 }
 
-.btn:hover{transform:translateY(-4px)}
-
-/* ===== PROFILE CARD ===== */
-.profile{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:28px;
-  padding:36px;
+.exp p{
+  margin-top:12px;
+  color:var(--muted);
 }
-
-.profile h3{color:var(--accent)}
-.profile ul{color:var(--muted);padding-left:18px}
-
-/* ===== SECTIONS ===== */
-section{padding:80px 0}
-section h2{font-size:2.2rem;margin-bottom:44px}
 
 /* ===== SKILLS ===== */
 .skills{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:28px;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:14px;
 }
 
 .skill{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:22px;
-  padding:28px;
-  text-align:center;
-  transition:.3s;
+  border:1px solid var(--line);
+  padding:12px 14px;
+  border-radius:8px;
+  font-size:.95rem;
 }
-
-.skill i{font-size:2rem;color:var(--accent);margin-bottom:12px}
-.skill:hover{transform:translateY(-6px);border-color:var(--accent)}
-
-/* ===== EXPERIENCE TIMELINE ===== */
-.timeline{
-  position:relative;
-  margin-left:20px;
-}
-
-.timeline::before{
-  content:"";
-  position:absolute;
-  left:0;
-  top:0;
-  width:3px;
-  height:100%;
-  background:var(--border);
-}
-
-.exp{
-  position:relative;
-  margin-bottom:40px;
-  padding-left:40px;
-  opacity:0;
-  transform:translateY(30px);
-  transition:.6s ease;
-}
-
-.exp.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
-.exp::before{
-  content:"";
-  position:absolute;
-  left:-10px;
-  top:6px;
-  width:18px;
-  height:18px;
-  border-radius:50%;
-  background:var(--accent);
-}
-
-.exp-card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:20px;
-  padding:26px;
-}
-
-.exp span{color:var(--accent);font-weight:600}
 
 /* ===== PROJECTS ===== */
 .project{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:26px;
-  padding:34px;
-  margin-bottom:60px;
+  margin-bottom:80px;
+}
+
+.project h3{
+  margin-bottom:8px;
+}
+
+.project p{
+  color:var(--muted);
+  max-width:620px;
 }
 
 iframe{
   width:100%;
-  height:480px;
-  border:none;
-  border-radius:18px;
-  margin-top:20px;
+  height:460px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  margin-top:24px;
 }
 
-/* ===== CONTACT ===== */
-.contact{text-align:center}
-.contact a{color:var(--accent);text-decoration:none}
-
 /* ===== FOOTER ===== */
-footer{text-align:center;padding:40px 0;color:var(--muted)}
+footer{
+  border-top:1px solid var(--line);
+  padding-top:40px;
+  color:var(--muted);
+  font-size:.9rem;
+}
 
 /* ===== RESPONSIVE ===== */
-@media(max-width:900px){
-  .hero{grid-template-columns:1fr}
-  .hero h1{font-size:2.6rem}
+@media(max-width:640px){
+  header h1{font-size:2.2rem}
 }
 </style>
 </head>
 
 <body>
 
-<div class="toggle" onclick="toggleTheme()">
-  <i class="fa-solid fa-circle-half-stroke"></i>
-</div>
+<div class="wrapper">
 
-<div class="container">
+<header>
+  <h1>Vaibhvi Srivastav</h1>
+  <p>
+    Data Analyst with an MSc in Statistics, focused on Power BI dashboards,
+    statistical analysis, and decision-driven insights.
+  </p>
 
-<!-- HERO -->
-<div class="hero">
-  <div>
-    <span class="badge">DATA ANALYST PORTFOLIO</span>
-    <h1>Vaibhvi<br>Srivastav</h1>
-    <p>MSc Statistics graduate specializing in Power BI dashboards and business insights.</p>
-    <div class="actions">
-      <a href="Resume.pdf" class="btn primary"><i class="fa-solid fa-download"></i> Resume</a>
-      <a href="#projects" class="btn"><i class="fa-solid fa-chart-line"></i> Projects</a>
-    </div>
+  <div class="meta">
+    <span>📍 Lucknow, India</span>
+    <a href="mailto:vaibhvisrivastav10@gmail.com">Email</a>
+    <a href="Resume.pdf" download>Resume</a>
+    <a href="https://www.linkedin.com/in/vaibhvi-srivastav-43416a200" target="_blank">LinkedIn</a>
   </div>
+</header>
 
-  <div class="profile">
-    <h3>Profile Snapshot</h3>
-    <ul>
-      <li>Statistics & Analytics foundation</li>
-      <li>Power BI, DAX & Excel</li>
-      <li>Dashboard UI & storytelling</li>
-      <li>Internships: UPICON & NSSO</li>
-    </ul>
-  </div>
-</div>
-
-<!-- SKILLS -->
-<section>
-  <h2>Core Skills</h2>
-  <div class="skills">
-    <div class="skill"><i class="fa-solid fa-chart-column"></i><h4>Power BI</h4></div>
-    <div class="skill"><i class="fa-solid fa-database"></i><h4>SQL</h4></div>
-    <div class="skill"><i class="fa-solid fa-file-excel"></i><h4>Excel</h4></div>
-    <div class="skill"><i class="fa-solid fa-chart-pie"></i><h4>DAX</h4></div>
-    <div class="skill"><i class="fa-solid fa-calculator"></i><h4>Statistics</h4></div>
-    <div class="skill"><i class="fa-solid fa-code"></i><h4>R Programming</h4></div>
-  </div>
-</section>
-
-<!-- EXPERIENCE -->
 <section>
   <h2>Experience</h2>
-  <div class="timeline">
-    <div class="exp">
-      <div class="exp-card">
-        <span>UPICON</span>
-        <h3>Data Analytics Intern</h3>
-        <p>Designed dashboards, KPIs and analytical reports to support decision-making.</p>
-      </div>
-    </div>
 
-    <div class="exp">
-      <div class="exp-card">
-        <span>NSSO</span>
-        <h3>Statistical Intern</h3>
-        <p>Worked on survey data validation, summaries and official statistical reporting.</p>
-      </div>
+  <div class="exp">
+    <div class="exp-header">
+      <h3>Data Analytics Intern — UPICON</h3>
+      <span>Nov 2025 – Feb 2026</span>
     </div>
+    <p>
+      Built analytical reports and dashboards, performed data cleaning,
+      and supported business decision-making through insights.
+    </p>
+  </div>
+
+  <div class="exp">
+    <div class="exp-header">
+      <h3>Statistical Intern — NSSO (FOD)</h3>
+      <span>Jun 2024 – Aug 2024</span>
+    </div>
+    <p>
+      Worked on survey data validation, statistical summaries,
+      and government data analysis workflows.
+    </p>
   </div>
 </section>
 
-<!-- PROJECTS -->
-<section id="projects">
-  <h2>Selected Projects</h2>
+<section>
+  <h2>Skills</h2>
+  <div class="skills">
+    <div class="skill">Power BI</div>
+    <div class="skill">Excel</div>
+    <div class="skill">Power Query</div>
+    <div class="skill">DAX</div>
+    <div class="skill">Statistics</div>
+    <div class="skill">SQL (Basic)</div>
+    <div class="skill">R Programming</div>
+  </div>
+</section>
+
+<section>
+  <h2>Projects</h2>
 
   <div class="project">
     <h3>Super Store Sales Dashboard</h3>
+    <p>
+      Sales, profit, regional and product-level analysis using Power BI.
+    </p>
     <iframe src="https://app.powerbi.com/view?r=eyJrIjoiZjFlMWI4OGMtYmU3MC00NTgwLTk3NTAtMjkxNGRlOGVkMTk1IiwidCI6ImU5YjkyNzZlLTIzNzEtNDcxNS04YTFkLTE2YmNlOGZiYjZmZCJ9"></iframe>
   </div>
 
   <div class="project">
     <h3>Delivery Analytics Dashboard</h3>
+    <p>
+      Analysis of delivery performance and operational efficiency.
+    </p>
     <iframe src="https://app.powerbi.com/view?r=eyJrIjoiYmQwYjM0MzctOTJlNC00N2IxLTljOTctZTQ0NTAwMDY0MThkIiwidCI6ImU5YjkyNzZlLTIzNzEtNDcxNS04YTFkLTE2YmNlOGZiYjZmZCJ9"></iframe>
   </div>
-</section>
-  
+
   <div class="project">
-    <h3>Pizza Sales Dashboard</h3
+    <h3>Pizza Sales Dashboard</h3>
+    <p>
+      Order trends, revenue insights, and top-selling products.
+    </p>
     <iframe src="https://app.powerbi.com/view?r=eyJrIjoiOWE4NDE0NzQtNTkzNi00N2NjLWFkNTktNmQ1N2U1MTcyZGI4IiwidCI6ImU5YjkyNzZlLTIzNzEtNDcxNS04YTFkLTE2YmNlOGZiYjZmZCJ9"></iframe>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section class="contact">
-  <h2>Contact</h2>
-  <p>📧 <a href="mailto:vaibhvisrivastav10@gmail.com">vaibhvisrivastav10@gmail.com</a></p>
-  <p>🔗 <a href="https://linkedin.com" target="_blank">LinkedIn</a></p>
-  <p>📍 Lucknow, India</p>
-</section>
-
-<footer>© 2026 Vaibhvi Srivastav • Data Analyst</footer>
+<footer>
+  © 2026 Vaibhvi Srivastav — Data Analyst
+</footer>
 
 </div>
-
-<script>
-function toggleTheme(){
-  document.body.classList.toggle("light");
-}
-
-const exps=document.querySelectorAll(".exp");
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){e.target.classList.add("show")}
-  });
-},{threshold:.2});
-
-exps.forEach(exp=>observer.observe(exp));
-</script>
 
 </body>
 </html>
