@@ -1,351 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vaibhvi Srivastav | Data Analyst</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-:root{
-  --bg:#f4f6f8;
-  --panel:#ffffff;
-  --text:#0f172a;
-  --muted:#475569;
-  --border:#e2e8f0;
-  --accent:#0f2a44;
-  --accent-soft:#e6edf3;
+:root {
+  --bg: #0b1220;
+  --surface: #121a2f;
+  --card: #18213a;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --accent: #4f9cf9;
+  --line: #1f2a44;
 }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Inter, system-ui, Segoe UI, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
 }
 
-body{
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.65;
+body {
+  background: linear-gradient(180deg, #0b1220 0%, #060a14 100%);
+  color: var(--text);
+  line-height: 1.7;
 }
 
-/* ===== HERO ===== */
-.hero{
-  background:linear-gradient(135deg,#0f2a44,#102f52);
-  color:white;
-  padding:90px 24px 80px;
+/* ---------- HERO ---------- */
+header {
+  max-width: 1200px;
+  margin: auto;
+  padding: 5rem 1.5rem 4rem;
 }
 
-.hero-inner{
-  max-width:1100px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:1.3fr 1fr;
-  gap:60px;
+header h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  letter-spacing: -1px;
 }
 
-.hero h1{
-  font-size:3.1rem;
-  line-height:1.1;
+header span {
+  color: var(--accent);
 }
 
-.hero p{
-  margin-top:18px;
-  color:#dbe4ee;
-  max-width:520px;
+header p {
+  max-width: 600px;
+  margin-top: 1.2rem;
+  color: var(--muted);
+  font-size: 1.1rem;
 }
 
-.hero-actions{
-  margin-top:32px;
-  display:flex;
-  gap:16px;
+/* ---------- SECTIONS ---------- */
+section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 4rem 1.5rem;
 }
 
-.btn{
-  padding:14px 26px;
-  border-radius:8px;
-  text-decoration:none;
-  font-weight:600;
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  border-left: 4px solid var(--accent);
+  padding-left: 1rem;
 }
 
-.btn.primary{
-  background:white;
-  color:#0f2a44;
+/* ---------- ABOUT ---------- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2.5rem;
 }
 
-.btn.secondary{
-  border:1px solid rgba(255,255,255,0.4);
-  color:white;
+.about-box {
+  background: var(--surface);
+  padding: 2rem;
+  border-radius: 14px;
 }
 
-.profile-box{
-  background:rgba(255,255,255,0.08);
-  border:1px solid rgba(255,255,255,0.25);
-  border-radius:12px;
-  padding:32px;
+.about-box h3 {
+  margin-bottom: 0.8rem;
 }
 
-.profile-box h3{
-  margin-bottom:14px;
-  font-size:1.2rem;
+/* ---------- EXPERIENCE ---------- */
+.timeline {
+  position: relative;
+  padding-left: 2rem;
 }
 
-.profile-box ul{
-  list-style:none;
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--line);
 }
 
-.profile-box li{
-  margin-bottom:10px;
-  color:#e5e7eb;
+.exp {
+  margin-bottom: 2.5rem;
+  position: relative;
 }
 
-/* ===== SECTIONS ===== */
-section{
-  max-width:1100px;
-  margin:auto;
-  padding:80px 24px;
+.exp::before {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  background: var(--accent);
+  border-radius: 50%;
 }
 
-section h2{
-  font-size:2rem;
-  margin-bottom:30px;
-  border-left:5px solid var(--accent);
-  padding-left:14px;
+.exp h3 {
+  font-size: 1.1rem;
 }
 
-/* ===== ABOUT ===== */
-.about p{
-  max-width:750px;
-  color:var(--muted);
+.exp span {
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 
-/* ===== SKILLS ===== */
-.skills{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:18px;
+.exp p {
+  margin-top: 0.5rem;
+  color: #d1d5db;
 }
 
-.skill{
-  background:var(--panel);
-  border:1px solid var(--border);
-  border-radius:10px;
-  padding:18px 20px;
-  font-weight:600;
+/* ---------- SKILLS ---------- */
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
 }
 
-/* ===== EXPERIENCE ===== */
-.experience{
-  display:grid;
-  gap:26px;
+.skill {
+  background: var(--card);
+  padding: 1rem;
+  text-align: center;
+  border-radius: 12px;
+  font-weight: 500;
 }
 
-.exp-card{
-  background:var(--panel);
-  border:1px solid var(--border);
-  border-left:6px solid var(--accent);
-  border-radius:10px;
-  padding:24px 28px;
+/* ---------- PROJECTS ---------- */
+.project {
+  background: var(--surface);
+  padding: 2.5rem;
+  border-radius: 18px;
+  margin-bottom: 3rem;
 }
 
-.exp-card h3{
-  font-size:1.05rem;
+.project h3 {
+  font-size: 1.4rem;
 }
 
-.exp-card span{
-  font-size:0.9rem;
-  color:var(--muted);
+.project p {
+  color: var(--muted);
+  margin: 0.8rem 0 1.5rem;
 }
 
-.exp-card p{
-  margin-top:10px;
-  color:var(--muted);
+iframe {
+  width: 100%;
+  height: 480px;
+  border-radius: 14px;
+  border: none;
 }
 
-/* ===== PROJECTS ===== */
-.project{
-  background:var(--panel);
-  border:1px solid var(--border);
-  border-radius:12px;
-  padding:30px;
-  margin-bottom:60px;
+/* ---------- CONTACT ---------- */
+.contact {
+  background: linear-gradient(135deg, var(--surface), #0f172a);
+  padding: 3rem;
+  border-radius: 18px;
+  text-align: center;
 }
 
-.project h3{
-  margin-bottom:6px;
+.contact a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
 }
 
-.project p{
-  color:var(--muted);
-  margin-bottom:16px;
-}
-
-iframe{
-  width:100%;
-  height:460px;
-  border:1px solid var(--border);
-  border-radius:10px;
-}
-
-/* ===== CONTACT ===== */
-.contact{
-  background:var(--panel);
-  border:1px solid var(--border);
-  border-radius:12px;
-  padding:40px;
-}
-
-.contact a{
-  color:var(--accent);
-  text-decoration:none;
-  font-weight:600;
-}
-
-/* ===== FOOTER ===== */
-footer{
-  text-align:center;
-  padding:30px;
-  font-size:0.9rem;
-  color:var(--muted);
-}
-
-/* ===== RESPONSIVE ===== */
-@media(max-width:900px){
-  .hero-inner{
-    grid-template-columns:1fr;
-  }
-  .hero h1{
-    font-size:2.4rem;
-  }
+/* ---------- FOOTER ---------- */
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-inner">
-    <div>
-      <h1>Vaibhvi Srivastav</h1>
+<header>
+  <h1>Vaibhvi <span>Srivastav</span></h1>
+  <p>
+    Data Analyst specializing in transforming complex datasets into
+    executive-ready insights using Power BI, statistics, and business analytics.
+  </p>
+</header>
+
+<section>
+  <h2 class="section-title">Professional Summary</h2>
+  <div class="about-grid">
+    <div class="about-box">
       <p>
-        Data Analyst | MSc Statistics  
-        <br>Power BI • Business Analytics • Data Visualization
+        MSc Statistics graduate with hands-on experience in building
+        decision-driven dashboards. Strong focus on data storytelling,
+        KPI design, and business impact.
       </p>
-
-      <div class="hero-actions">
-        <a href="Resume.pdf" class="btn primary" download>
-          <i class="fa-solid fa-file-arrow-down"></i> Resume
-        </a>
-        <a href="#projects" class="btn secondary">
-          <i class="fa-solid fa-chart-line"></i> Projects
-        </a>
-      </div>
     </div>
-
-    <div class="profile-box">
-      <h3>Professional Summary</h3>
-      <ul>
-        <li>✔ Strong foundation in Statistics & Analytics</li>
-        <li>✔ Hands-on Power BI, DAX & Excel</li>
-        <li>✔ Experience with business & government data</li>
-        <li>✔ Insight-driven dashboard design</li>
-      </ul>
+    <div class="about-box">
+      <h3>Education</h3>
+      <p>🎓 MSc Statistics – 2025</p>
     </div>
   </div>
-</div>
-
-<!-- ABOUT -->
-<section class="about">
-  <h2>About</h2>
-  <p>
-    I specialize in transforming complex datasets into structured,
-    decision-ready insights through Power BI dashboards and
-    analytical reporting. My work emphasizes clarity, accuracy,
-    and business relevance.
-  </p>
 </section>
 
-<!-- SKILLS -->
 <section>
-  <h2>Core Skills</h2>
+  <h2 class="section-title">Experience</h2>
+  <div class="timeline">
+    <div class="exp">
+      <h3>Data Analyst Intern – UPICON</h3>
+      <span>Feb 2026 · 3 Months</span>
+      <p>
+        Built Power BI dashboards for operational reporting,
+        automated Excel workflows, and delivered actionable insights
+        to management.
+      </p>
+    </div>
+
+    <div class="exp">
+      <h3>Data Analyst Intern – NSSO FOD, Bareilly</h3>
+      <span>Government Survey Analytics</span>
+      <p>
+        Worked on large-scale statistical datasets,
+        data validation, and reporting support.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">Core Skills</h2>
   <div class="skills">
     <div class="skill">Power BI</div>
-    <div class="skill">Excel</div>
     <div class="skill">DAX</div>
     <div class="skill">Power Query</div>
+    <div class="skill">Excel</div>
     <div class="skill">Statistics</div>
     <div class="skill">SQL (Basic)</div>
     <div class="skill">R Programming</div>
   </div>
 </section>
 
-<!-- EXPERIENCE -->
 <section>
-  <h2>Experience</h2>
-  <div class="experience">
-
-    <div class="exp-card">
-      <h3>Data Analytics Intern — UPICON</h3>
-      <span>Nov 2025 – Feb 2026</span>
-      <p>
-        Analyzed business datasets, created Power BI dashboards,
-        and supported reporting workflows for management decisions.
-      </p>
-    </div>
-
-    <div class="exp-card">
-      <h3>Statistical Intern — NSSO</h3>
-      <span>Jun 2024 – Aug 2024</span>
-      <p>
-        Worked on government survey datasets, validation checks,
-        and statistical summaries for official analysis.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects">
-  <h2>Projects</h2>
+  <h2 class="section-title">Selected Projects</h2>
 
   <div class="project">
     <h3>Super Store Sales Dashboard</h3>
-    <p>Sales, profit and regional performance analysis.</p>
+    <p>Revenue, profit, regional & category performance analysis.</p>
     <iframe src="https://app.powerbi.com/view?r=eyJrIjoiZjFlMWI4OGMtYmU3MC00NTgwLTk3NTAtMjkxNGRlOGVkMTk1IiwidCI6ImU5YjkyNzZlLTIzNzEtNDcxNS04YTFkLTE2YmNlOGZiYjZmZCJ9"></iframe>
   </div>
 
   <div class="project">
     <h3>Delivery Analytics Dashboard</h3>
-    <p>Operational efficiency and delivery performance metrics.</p>
+    <p>Operational efficiency & delivery performance KPIs.</p>
     <iframe src="https://app.powerbi.com/view?r=eyJrIjoiYmQwYjM0MzctOTJlNC00N2IxLTljOTctZTQ0NTAwMDY0MThkIiwidCI6ImU5YjkyNzZlLTIzNzEtNDcxNS04YTFkLTE2YmNlOGZiYjZmZCJ9"></iframe>
   </div>
 
   <div class="project">
     <h3>Pizza Sales Dashboard</h3>
-    <p>Revenue trends, order volume, and top-selling products.</p>
-    <iframe src="https://app.powerbi.com/view?r=eyJrIjoiOWE4NDE0NzQtNTkzNi00N2NjLWFkNTktNmQ1N2U1MTcyZGI4IiwidCI6ImU5YjkyNzZlLTIzNzEtNDcxNS04YTFkLTE2YmNlOGZiYjZmZCJ9"></iframe>
+    <p>Customer behavior, peak hours, and product profitability.</p>
+    <iframe src="PASTE_YOUR_PIZZA_DASHBOARD_LINK_HERE"></iframe>
   </div>
+
 </section>
 
-<!-- CONTACT -->
 <section>
-  <h2>Contact</h2>
   <div class="contact">
+    <h2>Let’s Work Together</h2>
     <p>Email: <a href="mailto:vaibhvisrivastav10@gmail.com">vaibhvisrivastav10@gmail.com</a></p>
     <p>LinkedIn: <a href="https://www.linkedin.com/in/vaibhvi-srivastav-43416a200" target="_blank">View Profile</a></p>
-    <p>Lucknow, India</p>
+    <p>📍 Lucknow, India</p>
   </div>
 </section>
 
 <footer>
-  © 2026 Vaibhvi Srivastav • Data Analyst
+  © 2026 Vaibhvi Srivastav · Data Analyst
 </footer>
 
 </body>
