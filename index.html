@@ -9,11 +9,12 @@
 
 <style>
 :root{
-  --card:#ffffff;
-  --line:#e2e5e0;
-  --text:#1f2933;
-  --muted:#5f6c72;
-  --accent:#2f7f7b;
+  --bg:#f6f7f4;        /* warm off-white background */
+  --card:#ffffff;     /* clean white cards */
+  --line:#e2e5e0;     /* soft borders */
+  --text:#1f2933;     /* deep charcoal text */
+  --muted:#5f6c72;    /* muted descriptions */
+  --accent:#2f7f7b;   /* modern teal (data-friendly) */
 }
 
 *{
@@ -21,7 +22,6 @@
   padding:0;
   box-sizing:border-box;
   font-family:Inter,Segoe UI,sans-serif;
-  scroll-behavior:smooth;
 }
 
 body{
@@ -35,14 +35,6 @@ section{
   max-width:1150px;
   margin:auto;
   padding:90px 24px;
-  opacity:0;
-  transform:translateY(40px);
-  transition:all .8s ease;
-}
-
-section.show{
-  opacity:1;
-  transform:translateY(0);
 }
 
 h2{
@@ -66,12 +58,6 @@ h2::after{
   border:1px solid var(--line);
   border-radius:22px;
   padding:36px;
-  transition:.4s ease;
-}
-
-.card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 15px 40px rgba(0,0,0,0.08);
 }
 
 /* ===== HERO ===== */
@@ -119,7 +105,7 @@ h2::after{
   display:inline-flex;
   align-items:center;
   gap:10px;
-  transition:.3s ease;
+  transition:.25s ease;
 }
 
 .btn.primary{
@@ -127,10 +113,7 @@ h2::after{
   color:#ffffff;
 }
 
-.btn.primary:hover{
-  transform:translateY(-4px);
-  box-shadow:0 12px 25px rgba(47,127,123,0.3);
-}
+
 
 .btn.secondary{
   background:#fff;
@@ -138,9 +121,8 @@ h2::after{
   color:var(--text);
 }
 
-.btn.secondary:hover{
-  background:#f1f5f9;
-  transform:translateY(-4px);
+.btn:hover{
+  transform:translateY(-3px);
 }
 
 /* ===== PROFILE CARD ===== */
@@ -149,12 +131,10 @@ h2::after{
   border:1px solid var(--line);
   border-radius:26px;
   padding:38px;
-  transition:.4s ease;
 }
 
-.profile:hover{
-  transform:translateY(-8px);
-  box-shadow:0 15px 40px rgba(0,0,0,0.08);
+.profile h3{
+  margin-bottom:16px;
 }
 
 .profile li{
@@ -181,23 +161,17 @@ h2::after{
   border-radius:20px;
   padding:26px;
   text-align:center;
-  transition:.4s ease;
+  transition:.3s;
 }
 
 .skill i{
   font-size:1.8rem;
   color:var(--accent);
   margin-bottom:14px;
-  transition:.3s;
 }
 
 .skill:hover{
-  transform:translateY(-8px);
-  box-shadow:0 15px 35px rgba(0,0,0,0.07);
-}
-
-.skill:hover i{
-  transform:scale(1.2);
+  transform:translateY(-6px);
 }
 
 /* ===== EXPERIENCE ===== */
@@ -220,11 +194,6 @@ h2::after{
   padding-left:40px;
   margin-bottom:40px;
   position:relative;
-  transition:.4s ease;
-}
-
-.exp:hover{
-  transform:translateX(8px);
 }
 
 .exp::before{
@@ -254,11 +223,6 @@ iframe{
   border:none;
   border-radius:16px;
   margin-top:18px;
-  transition:.4s ease;
-}
-
-iframe:hover{
-  transform:scale(1.01);
 }
 
 /* ===== RESUME ===== */
@@ -277,12 +241,6 @@ iframe:hover{
   border:1px solid var(--line);
   border-radius:26px;
   padding:50px 20px;
-  transition:.4s ease;
-}
-
-.contact:hover{
-  transform:translateY(-6px);
-  box-shadow:0 15px 35px rgba(0,0,0,0.07);
 }
 
 .contact a{
@@ -358,12 +316,13 @@ footer{
   <div class="exp">
     <h3>Data Analyst Intern — UPICON</h3>
     <span>Nov 2025 – Feb 2026</span>
-    <p>Analyzed business datasets and created dashboards.</p>
+    <p>Analyzed business datasets, created reports and dashboards to support decision-making.</p>
   </div>
+
   <div class="exp">
     <h3>Statistical Intern — NSSO</h3>
     <span>Jun 2024 – Aug 2024</span>
-    <p>Worked on survey validation and statistical summaries.</p>
+    <p>Worked on survey validation, statistical summaries and government datasets.</p>
   </div>
 </div>
 </section>
@@ -371,24 +330,52 @@ footer{
 <!-- PROJECTS -->
 <section id="projects">
 <h2>Projects</h2>
+
 <div class="project card">
 <h3>Super Store Sales Dashboard</h3>
-<p>Sales, profit & region analysis.</p>
+<p>Sales, profit, region & product analysis.</p>
 <iframe src="https://app.powerbi.com/view?r=eyJrIjoiZjFlMWI4OGMtYmU3MC00NTgwLTk3NTAtMjkxNGRlOGVkMTk1IiwidCI6ImU5YjkyNzZlLTIzNzEtNDcxNS04YTFkLTE2YmNlOGZiYjZmZCJ9"></iframe>
+</div>
+
+<div class="project card">
+<h3>Delivery Analytics Dashboard</h3>
+<p>Operational efficiency & delivery performance.</p>
+<iframe src="https://app.powerbi.com/view?r=eyJrIjoiYmQwYjM0MzctOTJlNC00N2IxLTljOTctZTQ0NTAwMDY0MThkIiwidCI6ImU5YjkyNzZlLTIzNzEtNDcxNS04YTFkLTE2YmNlOGZiYjZmZCJ9"></iframe>
+</div>
+
+<div class="project card">
+<h3>Pizza Sales Dashboard</h3>
+<p>Orders, revenue, trends & top-selling pizzas.</p>
+<iframe src="https://app.powerbi.com/view?r=eyJrIjoiOWE4NDE0NzQtNTkzNi00N2NjLWFkNTktNmQ1N2U1MTcyZGI4IiwidCI6ImU5YjkyNzZlLTIzNzEtNDcxNS04YTFkLTE2YmNlOGZiYjZmZCJ9"></iframe>
 </div>
 </section>
 
-<script>
-const sections = document.querySelectorAll("section");
-window.addEventListener("scroll", () => {
-  sections.forEach(sec => {
-    const rect = sec.getBoundingClientRect();
-    if(rect.top < window.innerHeight - 100){
-      sec.classList.add("show");
-    }
-  });
-});
-</script>
+<!-- RESUME -->
+<section id="resume">
+<h2>Resume</h2>
+<div class="card">
+<iframe class="resume-frame" src="Resume.pdf"></iframe>
+<div style="text-align:center;margin-top:30px;">
+<a href="Resume.pdf" download class="btn primary">
+<i class="fa-solid fa-download"></i> Download Resume
+</a>
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section>
+<div class="contact">
+<h2>Contact</h2>
+<p>📧 <a href="mailto:vaibhvisrivastav10@gmail.com">vaibhvisrivastav10@gmail.com</a></p>
+<p>🔗 <a href="https://www.linkedin.com/in/vaibhvi-srivastav-43416a200" target="_blank">LinkedIn</a></p>
+<p>📍 Lucknow, India</p>
+</div>
+</section>
+
+<footer>
+© 2026 Vaibhvi Srivastav • Data Analyst
+</footer>
 
 </body>
 </html>
