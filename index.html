@@ -41,8 +41,8 @@ nav{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:20px 50px;
-  background:rgba(15,23,42,0.6);
+  padding:20px 8%;
+  background:rgba(15,23,42,0.7);
   backdrop-filter:blur(12px);
   border-bottom:1px solid var(--border);
   z-index:1000;
@@ -119,56 +119,87 @@ section{
   padding:100px 10%;
 }
 
-h2{
+.section-title{
   font-size:2.5rem;
-  margin-bottom:50px;
+  margin-bottom:60px;
+  text-align:center;
   color:var(--accent);
   text-shadow:0 0 10px var(--accent);
 }
 
-/* CARDS */
-.card{
+/* PROJECT CARDS */
+.projects-grid{
+  display:flex;
+  flex-direction:column;
+  gap:80px;
+}
+
+.project-card{
   background:var(--card);
   backdrop-filter:blur(20px);
   border:1px solid var(--border);
   border-radius:20px;
-  padding:30px;
-  transition:.4s;
+  padding:40px;
+  transition:0.4s ease;
 }
 
-.card:hover{
+.project-card:hover{
   transform:translateY(-10px);
-  box-shadow:0 0 30px rgba(56,189,248,0.4);
+  box-shadow:0 0 35px rgba(56,189,248,0.5);
 }
 
-/* SKILLS */
-.skills{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:30px;
+.project-info{
+  margin-bottom:25px;
 }
 
-.skill{
-  text-align:center;
+.project-info h3{
+  font-size:1.6rem;
+  margin-bottom:10px;
 }
 
-.skill i{
-  font-size:2rem;
-  margin-bottom:15px;
-  color:var(--accent);
-}
-
-/* PROJECTS */
-.project{
-  margin-bottom:60px;
+.project-info p{
+  color:var(--muted);
+  max-width:700px;
 }
 
 iframe{
   width:100%;
-  height:450px;
+  height:480px;
   border:none;
   border-radius:15px;
-  margin-top:20px;
+}
+
+/* RESUME */
+.resume-container{
+  text-align:center;
+}
+
+.resume-frame{
+  width:100%;
+  height:750px;
+  border-radius:15px;
+  border:1px solid var(--border);
+}
+
+.resume-btn{
+  margin-top:30px;
+}
+
+.resume-btn a{
+  display:inline-block;
+  padding:14px 30px;
+  border-radius:40px;
+  background:var(--accent);
+  color:#0f172a;
+  text-decoration:none;
+  font-weight:600;
+  box-shadow:0 0 20px var(--accent);
+  transition:0.3s;
+}
+
+.resume-btn a:hover{
+  transform:translateY(-5px);
+  box-shadow:0 0 35px var(--accent);
 }
 
 /* CONTACT */
@@ -181,6 +212,7 @@ iframe{
   text-decoration:none;
 }
 
+/* FOOTER */
 footer{
   text-align:center;
   padding:40px;
@@ -198,8 +230,8 @@ footer{
 <nav>
   <div class="logo">VAIBHVI.</div>
   <div>
-    <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
+    <a href="#resume">Resume</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
@@ -216,47 +248,59 @@ footer{
   </div>
 </div>
 
-<section id="skills">
-  <h2>Skills</h2>
-  <div class="skills">
-    <div class="card skill"><i class="fa-solid fa-chart-column"></i><h4>Power BI</h4></div>
-    <div class="card skill"><i class="fa-solid fa-database"></i><h4>SQL</h4></div>
-    <div class="card skill"><i class="fa-solid fa-chart-pie"></i><h4>DAX</h4></div>
-    <div class="card skill"><i class="fa-solid fa-calculator"></i><h4>Statistics</h4></div>
-    <div class="card skill"><i class="fa-solid fa-file-excel"></i><h4>Excel</h4></div>
-    <div class="card skill"><i class="fa-solid fa-code"></i><h4>R Programming</h4></div>
-  </div>
-</section>
-
 <section id="projects">
-  <h2>Projects</h2>
+<h2 class="section-title">Featured Projects</h2>
 
-  <div class="project card">
-    <h3>Super Store Sales Dashboard</h3>
-    <p>Revenue, profit & performance analysis.</p>
+<div class="projects-grid">
+
+  <div class="project-card">
+    <div class="project-info">
+      <h3>Super Store Sales Dashboard</h3>
+      <p>Sales, profit, region & product analysis.</p>
+    </div>
     <iframe src="https://app.powerbi.com/view?r=eyJrIjoiZjFlMWI4OGMtYmU3MC00NTgwLTk3NTAtMjkxNGRlOGVkMTk1IiwidCI6ImU5YjkyNzZlLTIzNzEtNDcxNS04YTFkLTE2YmNlOGZiYjZmZCJ9"></iframe>
   </div>
 
-  <div class="project card">
-    <h3>Delivery Analytics Dashboard</h3>
-    <p>Operational efficiency & logistics metrics.</p>
+  <div class="project-card">
+    <div class="project-info">
+      <h3>Delivery Analytics Dashboard</h3>
+      <p>Operational efficiency & delivery performance.</p>
+    </div>
     <iframe src="https://app.powerbi.com/view?r=eyJrIjoiYmQwYjM0MzctOTJlNC00N2IxLTljOTctZTQ0NTAwMDY0MThkIiwidCI6ImU5YjkyNzZlLTIzNzEtNDcxNS04YTFkLTE2YmNlOGZiYjZmZCJ9"></iframe>
   </div>
 
-  <div class="project card">
-    <h3>Pizza Sales Dashboard</h3>
-    <p>Sales trends & top-performing products.</p>
+  <div class="project-card">
+    <div class="project-info">
+      <h3>Pizza Sales Dashboard</h3>
+      <p>Orders, revenue, trends & top-selling pizzas.</p>
+    </div>
     <iframe src="https://app.powerbi.com/view?r=eyJrIjoiOWE4NDE0NzQtNTkzNi00N2NjLWFkNTktNmQ1N2U1MTcyZGI4IiwidCI6ImU5YjkyNzZlLTIzNzEtNDcxNS04YTFkLTE2YmNlOGZiYjZmZCJ9"></iframe>
   </div>
+
+</div>
+</section>
+
+<section id="resume">
+<h2 class="section-title">Resume</h2>
+
+<div class="resume-container">
+  <iframe class="resume-frame" src="Resume.pdf"></iframe>
+
+  <div class="resume-btn">
+    <a href="Resume.pdf" download>
+      <i class="fa-solid fa-download"></i> Download Resume
+    </a>
+  </div>
+</div>
 </section>
 
 <section id="contact">
-  <h2>Contact</h2>
-  <div class="contact">
-    <p>📧 <a href="mailto:vaibhvisrivastav10@gmail.com">vaibhvisrivastav10@gmail.com</a></p>
-    <p>🔗 <a href="https://www.linkedin.com/in/vaibhvi-srivastav-43416a200" target="_blank">LinkedIn</a></p>
-    <p>📍 Lucknow, India</p>
-  </div>
+<h2 class="section-title">Contact</h2>
+<div class="contact">
+  <p>📧 <a href="mailto:vaibhvisrivastav10@gmail.com">vaibhvisrivastav10@gmail.com</a></p>
+  <p>🔗 <a href="https://www.linkedin.com/in/vaibhvi-srivastav-43416a200" target="_blank">LinkedIn</a></p>
+  <p>📍 Lucknow, India</p>
+</div>
 </section>
 
 <footer>
