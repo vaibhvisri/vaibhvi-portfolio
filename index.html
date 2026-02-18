@@ -5,17 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vaibhvi Srivastav | Data Analyst</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
 
 :root{
-  --bg:#ffffff;
-  --text:#0f172a;
-  --muted:#64748b;
-  --accent:#2563eb;
-  --soft:#f1f5f9;
+  --bg:#0f172a;
+  --card:#111827;
+  --text:#f8fafc;
+  --muted:#94a3b8;
+  --accent:#38bdf8;
+  --gradient:linear-gradient(135deg,#38bdf8,#6366f1);
 }
 
 *{
@@ -25,12 +26,12 @@
   font-family:'Inter',sans-serif;
 }
 
-html{ scroll-behavior:smooth; }
+html{scroll-behavior:smooth;}
 
 body{
   background:var(--bg);
   color:var(--text);
-  line-height:1.6;
+  overflow-x:hidden;
 }
 
 /* NAVBAR */
@@ -42,28 +43,26 @@ nav{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  background:rgba(255,255,255,0.85);
+  background:rgba(15,23,42,0.6);
   backdrop-filter:blur(12px);
-  border-bottom:1px solid #eee;
   z-index:1000;
-}
-
-.logo{
-  font-weight:800;
-  font-size:1.1rem;
-  letter-spacing:1px;
 }
 
 nav a{
   margin-left:30px;
   text-decoration:none;
-  color:var(--text);
+  color:var(--muted);
   font-weight:500;
   transition:0.3s;
 }
 
 nav a:hover{
   color:var(--accent);
+}
+
+.logo{
+  font-weight:700;
+  letter-spacing:1px;
 }
 
 /* HERO */
@@ -76,21 +75,23 @@ nav a:hover{
 }
 
 .hero h1{
-  font-size:4.5rem;
+  font-size:4.2rem;
   font-weight:800;
   line-height:1.05;
   max-width:900px;
 }
 
 .hero span{
-  color:var(--accent);
+  background:var(--gradient);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 
 .hero p{
-  margin-top:30px;
+  margin-top:25px;
   font-size:1.2rem;
   color:var(--muted);
-  max-width:650px;
+  max-width:600px;
 }
 
 .hero-buttons{
@@ -101,32 +102,28 @@ nav a:hover{
 
 .btn{
   padding:14px 28px;
-  border-radius:10px;
+  border-radius:12px;
   font-weight:600;
   text-decoration:none;
   transition:0.3s;
 }
 
 .primary{
-  background:var(--accent);
+  background:var(--gradient);
   color:white;
 }
 
-.primary:hover{
-  transform:translateY(-3px);
-  box-shadow:0 15px 30px rgba(37,99,235,0.25);
-}
-
 .secondary{
-  background:var(--soft);
-  color:var(--text);
+  border:1px solid #334155;
+  color:white;
 }
 
-.secondary:hover{
-  transform:translateY(-3px);
+.btn:hover{
+  transform:translateY(-4px);
+  box-shadow:0 15px 40px rgba(0,0,0,0.4);
 }
 
-/* SECTION */
+/* SECTIONS */
 section{
   padding:120px 8%;
 }
@@ -134,37 +131,16 @@ section{
 .section-title{
   font-size:2.5rem;
   font-weight:700;
-  margin-bottom:60px;
-}
-
-/* EXPERIENCE */
-.exp-item{
-  margin-bottom:50px;
-}
-
-.exp-item h3{
-  font-size:1.2rem;
-  font-weight:600;
-}
-
-.exp-item span{
-  font-size:0.9rem;
-  color:var(--muted);
-}
-
-.exp-item p{
-  margin-top:10px;
-  color:var(--muted);
-  max-width:600px;
+  margin-bottom:70px;
 }
 
 /* PROJECTS */
 .project{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:60px;
+  gap:70px;
   align-items:center;
-  margin-bottom:120px;
+  margin-bottom:140px;
 }
 
 .project:nth-child(even){
@@ -176,13 +152,13 @@ section{
 }
 
 .project-text h3{
-  font-size:1.6rem;
-  margin-bottom:15px;
+  font-size:1.8rem;
+  margin-bottom:20px;
 }
 
 .project-text p{
   color:var(--muted);
-  margin-bottom:20px;
+  margin-bottom:25px;
 }
 
 iframe{
@@ -190,29 +166,27 @@ iframe{
   height:420px;
   border:none;
   border-radius:20px;
-  box-shadow:0 25px 60px rgba(0,0,0,0.08);
+  box-shadow:0 30px 80px rgba(0,0,0,0.6);
+  transition:0.4s;
+}
+
+iframe:hover{
+  transform:scale(1.03);
 }
 
 /* RESUME */
 .resume-box{
-  background:var(--soft);
+  background:var(--card);
   padding:60px;
   border-radius:20px;
-  text-align:center;
 }
 
 .resume-box iframe{
-  height:600px;
+  width:100%;
+  height:700px;
+  border:none;
+  border-radius:20px;
   margin-bottom:30px;
-}
-
-.download-btn{
-  padding:14px 28px;
-  background:var(--accent);
-  color:white;
-  text-decoration:none;
-  border-radius:10px;
-  font-weight:600;
 }
 
 /* CONTACT */
@@ -233,7 +207,7 @@ footer{
 }
 
 @media(max-width:900px){
-  .hero h1{font-size:3rem;}
+  .hero h1{font-size:2.8rem;}
   .project{grid-template-columns:1fr;}
   .project:nth-child(even){direction:ltr;}
 }
@@ -252,42 +226,25 @@ footer{
 </nav>
 
 <div class="hero">
-  <h1>I turn complex data into <span>clear business decisions.</span></h1>
+  <h1>I transform raw data into <span>strategic business impact.</span></h1>
   <p>
-    MSc Statistics graduate and Data Analyst specializing in Power BI,
-    DAX and advanced analytics. I design dashboards that help organizations
-    make smarter, faster decisions.
+    MSc Statistics graduate and Data Analyst specializing in Power BI, DAX,
+    and interactive dashboards that drive real decision-making.
   </p>
 
   <div class="hero-buttons">
     <a href="#projects" class="btn primary">View Projects</a>
-    <a href="#resume" class="btn secondary">Download Resume</a>
+    <a href="#resume" class="btn secondary">View Resume</a>
   </div>
 </div>
 
-<section>
-  <h2 class="section-title">Experience</h2>
-
-  <div class="exp-item">
-    <h3>Data Analyst Intern — UPICON</h3>
-    <span>Nov 2025 – Feb 2026</span>
-    <p>Built interactive dashboards and analyzed business datasets to support strategic planning and performance optimization.</p>
-  </div>
-
-  <div class="exp-item">
-    <h3>Statistical Intern — NSSO</h3>
-    <span>Jun 2024 – Aug 2024</span>
-    <p>Worked on survey validation, statistical summaries, and government data analysis projects.</p>
-  </div>
-</section>
-
 <section id="projects">
-  <h2 class="section-title">Selected Work</h2>
+  <h2 class="section-title">Selected Projects</h2>
 
   <div class="project">
     <div class="project-text">
       <h3>Super Store Sales Dashboard</h3>
-      <p>Comprehensive sales and profit analysis with regional insights and performance tracking.</p>
+      <p>Comprehensive regional sales, profit and product performance analysis.</p>
     </div>
     <iframe src="https://app.powerbi.com/view?r=eyJrIjoiZjFlMWI4OGMtYmU3MC00NTgwLTk3NTAtMjkxNGRlOGVkMTk1IiwidCI6ImU5YjkyNzZlLTIzNzEtNDcxNS04YTFkLTE2YmNlOGZiYjZmZCJ9"></iframe>
   </div>
@@ -295,7 +252,7 @@ footer{
   <div class="project">
     <div class="project-text">
       <h3>Delivery Analytics Dashboard</h3>
-      <p>Operational efficiency dashboard focused on delivery timelines and service metrics.</p>
+      <p>Operational KPIs and delivery efficiency tracking dashboard.</p>
     </div>
     <iframe src="https://app.powerbi.com/view?r=eyJrIjoiYmQwYjM0MzctOTJlNC00N2IxLTljOTctZTQ0NTAwMDY0MThkIiwidCI6ImU5YjkyNzZlLTIzNzEtNDcxNS04YTFkLTE2YmNlOGZiYjZmZCJ9"></iframe>
   </div>
@@ -303,7 +260,7 @@ footer{
   <div class="project">
     <div class="project-text">
       <h3>Pizza Sales Dashboard</h3>
-      <p>Interactive revenue analysis identifying peak trends and top-performing products.</p>
+      <p>Interactive revenue trends and product performance insights.</p>
     </div>
     <iframe src="https://app.powerbi.com/view?r=eyJrIjoiOWE4NDE0NzQtNTkzNi00N2NjLWFkNTktNmQ1N2U1MTcyZGI4IiwidCI6ImU5YjkyNzZlLTIzNzEtNDcxNS04YTFkLTE2YmNlOGZiYjZmZCJ9"></iframe>
   </div>
@@ -315,9 +272,11 @@ footer{
 
   <div class="resume-box">
     <iframe src="Resume.pdf"></iframe>
-    <a href="Resume.pdf" download class="download-btn">
-      <i class="fa-solid fa-download"></i> Download Resume
-    </a>
+    <div style="text-align:center;">
+      <a href="Resume.pdf" download class="btn primary">
+        <i class="fa-solid fa-download"></i> Download Resume
+      </a>
+    </div>
   </div>
 </section>
 
@@ -325,7 +284,7 @@ footer{
   <h2 class="section-title">Contact</h2>
   <div class="contact">
     <p>📧 <a href="mailto:vaibhvisrivastav10@gmail.com">vaibhvisrivastav10@gmail.com</a></p>
-    <p>🔗 <a href="https://www.linkedin.com/in/vaibhvi-srivastav-43416a200" target="_blank">LinkedIn</a></p>
+    <p>🔗 <a href="https://www.linkedin.com/in/vaibhvi-srivastav-43416a200" target="_blank">LinkedIn Profile</a></p>
     <p>📍 Lucknow, India</p>
   </div>
 </section>
