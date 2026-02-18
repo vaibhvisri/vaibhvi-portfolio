@@ -9,7 +9,6 @@
 
 <style>
 :root{
-  --bg:#f6f7f4;
   --card:#ffffff;
   --line:#e2e5e0;
   --text:#1f2933;
@@ -22,9 +21,6 @@
   padding:0;
   box-sizing:border-box;
   font-family:Inter,Segoe UI,sans-serif;
-}
-
-html{
   scroll-behavior:smooth;
 }
 
@@ -34,23 +30,19 @@ body{
   line-height:1.7;
 }
 
-/* Smooth section fade-in */
-.reveal{
-  opacity:0;
-  transform:translateY(50px);
-  transition:all 0.8s ease;
-}
-
-.reveal.active{
-  opacity:1;
-  transform:translateY(0);
-}
-
 /* ===== GLOBAL ===== */
 section{
   max-width:1150px;
   margin:auto;
   padding:90px 24px;
+  opacity:0;
+  transform:translateY(40px);
+  transition:all .8s ease;
+}
+
+section.show{
+  opacity:1;
+  transform:translateY(0);
 }
 
 h2{
@@ -74,12 +66,12 @@ h2::after{
   border:1px solid var(--line);
   border-radius:22px;
   padding:36px;
-  transition:all .3s ease;
+  transition:.4s ease;
 }
 
 .card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 20px 40px rgba(0,0,0,0.08);
+  transform:translateY(-8px);
+  box-shadow:0 15px 40px rgba(0,0,0,0.08);
 }
 
 /* ===== HERO ===== */
@@ -100,12 +92,6 @@ h2::after{
   color:var(--accent);
   font-size:0.85rem;
   font-weight:600;
-  transition:.3s;
-}
-
-.tag:hover{
-  background:var(--accent);
-  color:#fff;
 }
 
 .hero h1{
@@ -138,7 +124,12 @@ h2::after{
 
 .btn.primary{
   background:linear-gradient(135deg,#2f7f7b,#3fa29d);
-  color:#fff;
+  color:#ffffff;
+}
+
+.btn.primary:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 25px rgba(47,127,123,0.3);
 }
 
 .btn.secondary{
@@ -147,9 +138,9 @@ h2::after{
   color:var(--text);
 }
 
-.btn:hover{
+.btn.secondary:hover{
+  background:#f1f5f9;
   transform:translateY(-4px);
-  box-shadow:0 12px 25px rgba(0,0,0,0.1);
 }
 
 /* ===== PROFILE CARD ===== */
@@ -158,12 +149,12 @@ h2::after{
   border:1px solid var(--line);
   border-radius:26px;
   padding:38px;
-  transition:.3s;
+  transition:.4s ease;
 }
 
 .profile:hover{
-  transform:translateY(-6px);
-  box-shadow:0 20px 35px rgba(0,0,0,0.08);
+  transform:translateY(-8px);
+  box-shadow:0 15px 40px rgba(0,0,0,0.08);
 }
 
 .profile li{
@@ -190,7 +181,7 @@ h2::after{
   border-radius:20px;
   padding:26px;
   text-align:center;
-  transition:.3s;
+  transition:.4s ease;
 }
 
 .skill i{
@@ -202,11 +193,11 @@ h2::after{
 
 .skill:hover{
   transform:translateY(-8px);
-  box-shadow:0 18px 35px rgba(0,0,0,0.08);
+  box-shadow:0 15px 35px rgba(0,0,0,0.07);
 }
 
 .skill:hover i{
-  transform:scale(1.15);
+  transform:scale(1.2);
 }
 
 /* ===== EXPERIENCE ===== */
@@ -229,11 +220,11 @@ h2::after{
   padding-left:40px;
   margin-bottom:40px;
   position:relative;
-  transition:.3s;
+  transition:.4s ease;
 }
 
 .exp:hover{
-  transform:translateX(6px);
+  transform:translateX(8px);
 }
 
 .exp::before{
@@ -245,6 +236,11 @@ h2::after{
   height:18px;
   background:var(--accent);
   border-radius:50%;
+}
+
+.exp span{
+  color:var(--muted);
+  font-size:0.9rem;
 }
 
 /* ===== PROJECTS ===== */
@@ -262,8 +258,7 @@ iframe{
 }
 
 iframe:hover{
-  transform:scale(1.02);
-  box-shadow:0 25px 45px rgba(0,0,0,0.15);
+  transform:scale(1.01);
 }
 
 /* ===== RESUME ===== */
@@ -273,11 +268,6 @@ iframe:hover{
   border-radius:16px;
   border:1px solid var(--line);
   background:#fff;
-  transition:.3s;
-}
-
-.resume-frame:hover{
-  box-shadow:0 25px 45px rgba(0,0,0,0.1);
 }
 
 /* ===== CONTACT ===== */
@@ -287,12 +277,12 @@ iframe:hover{
   border:1px solid var(--line);
   border-radius:26px;
   padding:50px 20px;
-  transition:.3s;
+  transition:.4s ease;
 }
 
 .contact:hover{
   transform:translateY(-6px);
-  box-shadow:0 20px 35px rgba(0,0,0,0.08);
+  box-shadow:0 15px 35px rgba(0,0,0,0.07);
 }
 
 .contact a{
@@ -308,7 +298,6 @@ footer{
   font-size:.9rem;
 }
 
-/* Responsive */
 @media(max-width:900px){
   .hero{grid-template-columns:1fr}
   .hero h1{font-size:2.6rem}
@@ -319,7 +308,7 @@ footer{
 <body>
 
 <!-- HERO -->
-<div class="hero reveal">
+<div class="hero">
   <div>
     <span class="tag">DATA ANALYST PORTFOLIO</span>
     <h1>Vaibhvi<br>Srivastav</h1>
@@ -349,21 +338,56 @@ footer{
   </div>
 </div>
 
-<!-- JS Reveal -->
-<script>
-window.addEventListener("scroll", reveal);
+<!-- SKILLS -->
+<section>
+<h2>Skills</h2>
+<div class="skills">
+  <div class="skill"><i class="fa-solid fa-chart-column"></i><h4>Power BI</h4></div>
+  <div class="skill"><i class="fa-solid fa-file-excel"></i><h4>Excel</h4></div>
+  <div class="skill"><i class="fa-solid fa-database"></i><h4>SQL (Basic)</h4></div>
+  <div class="skill"><i class="fa-solid fa-calculator"></i><h4>Statistics</h4></div>
+  <div class="skill"><i class="fa-solid fa-chart-pie"></i><h4>DAX</h4></div>
+  <div class="skill"><i class="fa-solid fa-code"></i><h4>R Programming</h4></div>
+</div>
+</section>
 
-function reveal(){
-  let reveals = document.querySelectorAll(".reveal");
-  for(let i=0;i<reveals.length;i++){
-    let windowHeight = window.innerHeight;
-    let elementTop = reveals[i].getBoundingClientRect().top;
-    let elementVisible = 100;
-    if(elementTop < windowHeight - elementVisible){
-      reveals[i].classList.add("active");
+<!-- EXPERIENCE -->
+<section>
+<h2>Experience</h2>
+<div class="timeline">
+  <div class="exp">
+    <h3>Data Analyst Intern — UPICON</h3>
+    <span>Nov 2025 – Feb 2026</span>
+    <p>Analyzed business datasets and created dashboards.</p>
+  </div>
+  <div class="exp">
+    <h3>Statistical Intern — NSSO</h3>
+    <span>Jun 2024 – Aug 2024</span>
+    <p>Worked on survey validation and statistical summaries.</p>
+  </div>
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+<h2>Projects</h2>
+<div class="project card">
+<h3>Super Store Sales Dashboard</h3>
+<p>Sales, profit & region analysis.</p>
+<iframe src="https://app.powerbi.com/view?r=eyJrIjoiZjFlMWI4OGMtYmU3MC00NTgwLTk3NTAtMjkxNGRlOGVkMTk1IiwidCI6ImU5YjkyNzZlLTIzNzEtNDcxNS04YTFkLTE2YmNlOGZiYjZmZCJ9"></iframe>
+</div>
+</section>
+
+<script>
+const sections = document.querySelectorAll("section");
+window.addEventListener("scroll", () => {
+  sections.forEach(sec => {
+    const rect = sec.getBoundingClientRect();
+    if(rect.top < window.innerHeight - 100){
+      sec.classList.add("show");
     }
-  }
-}
+  });
+});
 </script>
 
 </body>
