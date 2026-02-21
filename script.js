@@ -1,9 +1,9 @@
-const toggleBtn = document.getElementById("toggleTheme");
-const body = document.body;
+function showMore() {
+    const moreText = document.getElementById("moreText");
 
-toggleBtn.addEventListener("click", () => {
-  body.classList.toggle("dark");
-  toggleBtn.textContent = body.classList.contains("dark")
-    ? "☀️ Light Mode"
-    : "🌙 Dark Mode";
-});
+    if (moreText.classList.contains("hidden")) {
+        moreText.classList.remove("hidden");
+    } else {
+        moreText.classList.add("hidden");
+    }
+}
